@@ -19,6 +19,9 @@
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
+
+  --spacer: 1.5em;
+  --spacer-half: calc(var(--spacer) / 2);
 }
 
 /* reset */
@@ -73,7 +76,7 @@ button {
 }
 
 .flow-content > * + * {
-  margin-top: var(--flow-spacer, 1em);
+  margin-top: var(--flow-spacer, var(--spacer));
 }
 
 b,
@@ -92,7 +95,7 @@ b,
 }
 
 .sign-up-card {
-  padding: 1rem;
+  padding: var(--spacer);
   background-color: var(--bg-color, var(--clr-neutral-white));
   border-radius: var(--border-radius, 0.5rem);
   color: var(--color, var(--clr-neutral-dark-blue));
