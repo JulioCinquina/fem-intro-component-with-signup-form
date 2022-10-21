@@ -15,12 +15,71 @@
 
   <body>
     <main>
-      Learn to code by watching others See how experienced developers solve
-      problems in real-time. Watching scripted tutorials is great, but
-      understanding how developers think is invaluable. Try it free 7 days then
-      $20/mo. thereafter First Name Last Name Email Address Password Claim your
-      free trial By clicking the button, you are agreeing to our Terms and
-      Services
+      <div>
+        <h1 class="page-title">Learn to code by watching others</h1>
+        <p class="page-subtitle">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="button-look-alike">
+          <b>Try it free 7 days</b> then $20/mo. thereafter
+        </h2>
+
+        <div class="card">
+          <form action="#">
+            <div>
+              <label for="given-name" class="sr-only">First Name</label>
+              <input
+                type="text"
+                name="given-name"
+                id="given-name"
+                autocomplete="given-name"
+              />
+            </div>
+
+            <div>
+              <label for="last-name" class="sr-only">Last Name</label>
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                autocomplete="family-name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="sr-only">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+              />
+            </div>
+
+            <div>
+              <label for="password" class="sr-only">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                autocomplete="current-password"
+              />
+            </div>
+
+            <button class="button">Claim your free trial</button>
+          </form>
+
+          <p class="tos-footer">
+            By clicking the button, you are agreeing to our
+            <a href="#">Terms and Services</a>
+          </p>
+        </div>
+      </div>
     </main>
 
     <footer>
