@@ -55,6 +55,7 @@ p {
 input,
 button {
   font: inherit;
+  color: inherit;
 }
 
 /* utility classes */
