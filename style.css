@@ -74,6 +74,11 @@ button {
   margin-top: var(--flow-spacer, 1em);
 }
 
+b,
+.text-bold {
+  font-weight: 600;
+}
+
 /* components */
 
 .bg-light {
