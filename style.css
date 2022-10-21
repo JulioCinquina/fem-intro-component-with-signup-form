@@ -7,6 +7,17 @@
   --clr-neutral-dark-blue: hsl(249, 10%, 26%);
   --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
   --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --border-radius: 0.5rem;
+
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
 }
 
 /* reset */
@@ -63,6 +74,52 @@ button {
   margin-top: var(--flow-spacer, 1em);
 }
 
+/* components */
+
+.bg-light {
+  --bg-color: var(--clr-neutral-white);
+  --color: var(--clr-neutral-dark-blue);
+  --color-light: var(--clr-neutral-grayish-blue);
+  --accent-1: var(--clr-primary-green);
+  --accent-2: var(--clr-primary-red);
+}
+
+.card {
+  padding: 1rem;
+  background-color: var(--bg-color, var(--clr-neutral-white));
+  border-radius: var(--border-radius, 0.5rem);
+  color: var(--color, var(--clr-neutral-dark-blue));
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card form {
+  display: contents;
+}
+
+.card .button {
+  width: 100%;
+}
+
+.card .tos-footer {
+  max-width: 80%;
+}
+
+.tos-footer {
+  font-size: var(--fs-200);
+  color: var(--color-light);
+}
+
+.tos-footer a {
+  color: var(--accent-2, --clr-primary-red);
+  text-decoration: none;
+  font-weight: var(--fw-700);
+}
+
 /* general styles  */
 
 body {
@@ -70,7 +127,7 @@ body {
   background-color: var(--clr-primary-red);
   background-image: url("images/bg-intro-mobile.png");
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: var(--fs-400, 1rem);
   color: var(--clr-neutral-white);
 }
 
