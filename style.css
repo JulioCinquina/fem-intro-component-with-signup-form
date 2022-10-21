@@ -122,7 +122,8 @@ b,
 .tos-footer a {
   color: var(--accent-2, --clr-primary-red);
   text-decoration: none;
-  font-weight: var(--fw-700);
+  font-weight: var(--fw-600);
+}
 }
 
 /* general styles  */
