@@ -130,7 +130,7 @@ b,
 .button,
 .button-look-alike {
   padding-block: 1em;
-  padding-inline: 4em;
+  padding-inline: 3.25em;
   background-color: var(--accent-1, var(--clr-accent-blue));
   border-color: transparent;
   border-radius: var(--border-radius);
