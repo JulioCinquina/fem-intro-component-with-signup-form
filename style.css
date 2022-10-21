@@ -124,6 +124,11 @@ b,
   border-radius: var(--border-radius-inner);
 }
 
+.sign-up-card .tos-footer {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
 .tos-footer {
   font-size: var(--fs-200);
   color: var(--color-light);
