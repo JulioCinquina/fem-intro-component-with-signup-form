@@ -1,5 +1,12 @@
 :root {
   box-sizing: border-box;
+
+  --clr-primary-red: hsl(0, 100%, 74%);
+  --clr-primary-green: hsl(154, 59%, 51%);
+  --clr-accent-blue: hsl(248, 32%, 49%);
+  --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+  --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
 }
 
 /* reset */
@@ -38,10 +45,39 @@ button {
   font: inherit;
 }
 
-/* typography  */
+/* utility classes */
+
+.flow-content > * + * {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+/* general styles  */
 
 body {
+  padding-inline: 1rem;
+  background-color: var(--clr-primary-red);
+  background-image: url("images/bg-intro-mobile.png");
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: var(--clr-neutral-white);
+}
+
+main {
+  padding-block: 4.5rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.page-intro {
+  text-align: center;
+}
+
+.page-title {
+  line-height: inherit;
+}
+
+.page-subtitle {
+  --flow-spacer: 2rem;
 }
 
 /* footer */
