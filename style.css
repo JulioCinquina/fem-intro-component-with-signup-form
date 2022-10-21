@@ -188,6 +188,7 @@ main {
 }
 
 .page-intro {
+  padding-inline: 1rem;
   text-align: center;
 }
 
