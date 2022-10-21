@@ -38,6 +38,12 @@ button {
   font: inherit;
 }
 
+/* typography  */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 /* footer */
 
 .attribution {
