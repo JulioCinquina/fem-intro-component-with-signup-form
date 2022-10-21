@@ -9,6 +9,7 @@
   --clr-neutral-white: hsl(0, 0%, 100%);
 
   --border-radius: 0.5rem;
+  --border-radius-inner: 0.25rem;
 
   --fs-400: 1rem;
   --fs-300: 0.875rem;
@@ -108,6 +109,7 @@ b,
 
 .sign-up-card .button {
   width: 100%;
+  border-radius: var(--border-radius-inner);
 }
 
 .sign-up-card .tos-footer {
