@@ -108,6 +108,15 @@ b,
   display: contents;
 }
 
+.sign-up-card input:is([type="text"], [type="email"], [type="password"]) {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--color-light, --clr-neutral-grayish-blue);
+  border-radius: var(--border-radius-inner);
+  font-weight: var(--fw-700);
+}
+
 .sign-up-card .button {
   width: 100%;
   border-radius: var(--border-radius-inner);
