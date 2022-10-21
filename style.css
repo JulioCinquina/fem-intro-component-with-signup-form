@@ -22,6 +22,8 @@
 
   --spacer: 1.5em;
   --spacer-half: calc(var(--spacer) / 2);
+
+  --box-shadow: 0 0.5rem 0 rgb(0 0 0 / 0.15);
 }
 
 /* reset */
@@ -98,6 +100,8 @@ b,
   padding: var(--spacer);
   background-color: var(--bg-color, var(--clr-neutral-white));
   border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--box-shadow);
+
   color: var(--color, var(--clr-neutral-dark-blue));
   text-align: center;
 
@@ -148,14 +152,16 @@ b,
   border-color: transparent;
   border-radius: var(--border-radius);
 
+  /* smaller box shadow with optional solid color */
+  box-shadow: 0 0.33rem 0 rgb(0 0 0 / 0.15),
+    0 0.33rem 0 var(--solid-shadow-color, transparent);
+
   color: var(--bg-color, --clr-neutral-white);
   font-size: inherit;
   font-weight: var(--fw-500);
   text-align: center;
   text-transform: uppercase;
   line-height: inherit;
-
-  box-shadow: 0 0.33rem 0 rgb(0 0 0 / 0.15);
 }
 
 .button {
@@ -164,10 +170,7 @@ b,
 }
 
 .button--solid-shadow {
-  /* prettier-ignore */
-  box-shadow: 
-  0 0.33rem 0 rgb(0 0 0 / 0.15),
-  0 0.33rem 0 var(--accent-1);
+  --solid-shadow-color: var(--accent-1, var(--clr-accent-blue));
 }
 
 /* general styles  */
@@ -205,6 +208,7 @@ main {
 .cta h2 {
   text-transform: unset;
   font-weight: 400;
+  box-shadow: var(--box-shadow);
 }
 
 /* footer */
