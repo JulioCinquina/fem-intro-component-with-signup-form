@@ -89,7 +89,7 @@ b,
   --accent-2: var(--clr-primary-red);
 }
 
-.card {
+.sign-up-card {
   padding: 1rem;
   background-color: var(--bg-color, var(--clr-neutral-white));
   border-radius: var(--border-radius, 0.5rem);
@@ -102,15 +102,15 @@ b,
   gap: 1rem;
 }
 
-.card form {
+.sign-up-card form {
   display: contents;
 }
 
-.card .button {
+.sign-up-card .button {
   width: 100%;
 }
 
-.card .tos-footer {
+.sign-up-card .tos-footer {
   max-width: 80%;
 }
 
