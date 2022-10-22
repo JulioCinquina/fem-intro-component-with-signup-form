@@ -191,6 +191,9 @@ body {
   padding-inline: 1.5rem;
   background-color: var(--clr-primary-red);
   background-image: url("images/bg-intro-mobile.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
   font-size: var(--fs-400, 1rem);
   color: var(--clr-neutral-white);
