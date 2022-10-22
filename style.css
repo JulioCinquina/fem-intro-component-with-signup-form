@@ -8,12 +8,18 @@
   --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
   --clr-neutral-white: hsl(0, 0%, 100%);
 
-  --border-radius: 0.5rem;
-  --border-radius-inner: 0.25rem;
+  --border-radius: 0.625rem;
+  --border-radius-inner: 0.375rem;
 
+  --fs-800: 2rem;
+  --fs-700: 1.75rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
   --fs-400: 1rem;
-  --fs-300: 0.875rem;
-  --fs-200: 0.75rem;
+  --fs-350: 0.875rem;
+  --fs-300: 0.75rem;
+  --fs-250: 0.625rem;
+  --fs-200: 0.5rem;
 
   --fw-400: 400;
   --fw-500: 500;
@@ -37,7 +43,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 img,
@@ -117,9 +123,10 @@ b,
 .sign-up-card input:is([type="text"], [type="email"], [type="password"]) {
   display: block;
   width: 100%;
-  padding: 1.5rem;
-  border: 1px solid var(--color-light, --clr-neutral-grayish-blue);
+  padding: 1rem;
+  border: 0.0625rem solid var(--color-light, --clr-neutral-grayish-blue);
   border-radius: var(--border-radius-inner);
+  font-size: var(--fs-350);
   font-weight: var(--fw-700);
 }
 
@@ -134,7 +141,7 @@ b,
 }
 
 .tos-footer {
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   color: var(--color-light);
 }
 
@@ -146,15 +153,15 @@ b,
 
 .button,
 .button-look-alike {
-  padding-block: 1em;
-  padding-inline: 3.25em;
+  padding-block: 0.75em;
+  padding-inline: 1.5em;
   background-color: var(--accent-1, var(--clr-accent-blue));
   border-color: transparent;
   border-radius: var(--border-radius);
 
   /* smaller box shadow with optional solid color */
-  box-shadow: 0 0.33rem 0 rgb(0 0 0 / 0.15),
-    0 0.33rem 0 var(--solid-shadow-color, transparent);
+  box-shadow: 0 0.25rem 0 rgb(0 0 0 / 0.075),
+    0 0.25rem 0 var(--solid-shadow-color, transparent);
 
   color: var(--bg-color, --clr-neutral-white);
   font-size: inherit;
@@ -173,10 +180,15 @@ b,
   --solid-shadow-color: var(--accent-1, var(--clr-accent-blue));
 }
 
+.button--chubby {
+  padding-block: 1.125em;
+  padding-inline: 2.75em;
+}
+
 /* general styles  */
 
 body {
-  padding-inline: 1rem;
+  padding-inline: 1.5rem;
   background-color: var(--clr-primary-red);
   background-image: url("images/bg-intro-mobile.png");
   font-family: "Poppins", sans-serif;
@@ -185,22 +197,19 @@ body {
 }
 
 main {
-  padding-block: 4.5rem;
+  padding-block: 6rem;
   display: grid;
-  gap: 2.5rem;
+  align-items: center;
+  gap: 4rem;
 }
 
 .page-intro {
-  padding-inline: 1rem;
   text-align: center;
 }
 
 .page-title {
-  line-height: inherit;
-}
-
-.page-subtitle {
-  --flow-spacer: 2rem;
+  font-size: var(--fs-700);
+  line-height: 1.2;
 }
 
 /* specific styles */
