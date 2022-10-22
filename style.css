@@ -5,6 +5,7 @@
   --clr-primary-green: hsl(154, 59%, 51%);
   --clr-accent-blue: hsl(248, 32%, 49%);
   --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+  --clr-neutral-dark-blue-alpha: hsla(249, 10%, 26%, 0.54);
   --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
   --clr-neutral-white: hsl(0, 0%, 100%);
 
@@ -120,19 +121,57 @@ b,
   display: contents;
 }
 
-.sign-up-card input:is([type="text"], [type="email"], [type="password"]) {
+.sign-up-card .input-wrapper {
+  --input-padding-block: 1rem;
+  --input-padding-inline: 1rem;
+  position: relative;
+}
+
+.sign-up-card .input:is([type="text"], [type="email"], [type="password"]) {
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding-block: var(--input-padding-block, 1rem);
+  padding-inline: var(--input-padding-inline, 1rem);
   border: 0.0625rem solid var(--color-light, --clr-neutral-grayish-blue);
   border-radius: var(--border-radius-inner);
+
   font-size: var(--fs-350);
   font-weight: var(--fw-700);
 }
 
-.sign-up-card input:is([type="text"], [type="email"], [type="password"]):focus {
+.sign-up-card
+  .input:is([type="text"], [type="email"], [type="password"]):focus {
   outline: none;
   border-color: black;
+}
+
+.sign-up-card .label {
+  --label-padding-inline: 0.25rem;
+
+  /* Positions label over input top border */
+  position: absolute;
+  top: 0;
+  left: 0rem;
+  transform: translate(calc(1rem - var(--label-padding-inline)), -50%);
+
+  padding-inline: var(--label-padding-inline);
+  background-color: var(--bg-color);
+
+  font-size: var(--fs-250);
+  font-weight: var(--fw-700);
+}
+
+.sign-up-card .label--centered {
+  /* Enlarges and centers label inside of the input */
+  font-size: var(--fs-350);
+  color: var(--clr-neutral-dark-blue-alpha);
+  transform: translate(var(--input-padding-inline), var(--input-padding-block));
+}
+
+.sign-up-card .label--transition {
+  /* Added by JS after a delay to prevent visible movement on page load */
+  transition: transform 200ms ease, font-size 200ms ease,
+    background-color 200ms ease;
 }
 
 .sign-up-card .button {
@@ -283,7 +322,7 @@ main {
     gap: 1.25rem;
   }
 
-  .sign-up-card input:is([type="text"], [type="email"], [type="password"]) {
-    padding-inline: 2rem;
+  .sign-up-card .input-wrapper {
+    --input-padding-inline: 2rem;
   }
 }
