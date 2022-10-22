@@ -197,6 +197,8 @@ body {
 }
 
 main {
+  max-width: 31.25rem;
+  margin-inline: auto;
   padding-block: 6rem;
   display: grid;
   align-items: center;
