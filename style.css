@@ -197,6 +197,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: var(--fs-400, 1rem);
   color: var(--clr-neutral-white);
+
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 main {
@@ -233,4 +236,41 @@ main {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* media queries */
+
+@media screen and (min-width: 50em) {
+  :root {
+    --fs-700: 3rem;
+  }
+
+  body {
+    background-image: url("images/bg-intro-desktop.png");
+  }
+
+  main {
+    max-width: 69.5rem;
+    padding-block: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .page-intro {
+    padding: 0;
+    text-align: left;
+  }
+
+  .page-title {
+    line-height: 1.1;
+  }
+
+  .sign-up-card {
+    padding: 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .sign-up-card input:is([type="text"], [type="email"], [type="password"]) {
+    padding-inline: 2rem;
+  }
 }
