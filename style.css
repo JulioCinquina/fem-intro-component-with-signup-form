@@ -76,6 +76,10 @@ button {
   margin-top: var(--flow-spacer, var(--spacer));
 }
 
+.display-contents {
+  display: contents;
+}
+
 b,
 .text-bold {
   font-weight: 600;
@@ -103,10 +107,6 @@ b,
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.sign-up-card form {
-  display: contents;
 }
 
 .sign-up-card .input-wrapper {
