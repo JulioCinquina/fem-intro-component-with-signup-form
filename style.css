@@ -148,7 +148,7 @@ b,
   color: var(--clr-primary-red);
 }
 
-.sign-up-card .label {
+.input-wrapper .label {
   /* Positions label over input's top border */
   position: absolute;
   top: 0;
@@ -162,7 +162,7 @@ b,
   font-weight: var(--fw-700);
 }
 
-.sign-up-card .label--centered {
+.input-wrapper .label--centered {
   /* Enlarges and centers label inside of the input */
   background-color: transparent;
   font-size: var(--fs-350);
@@ -170,13 +170,13 @@ b,
   transform: translate(var(--input-padding-inline), var(--input-padding-block));
 }
 
-.sign-up-card .label--transition {
+.input-wrapper .label--transition {
   /* Added by JS after a delay to prevent visible movement on page load */
   transition: transform 200ms ease, font-size 200ms ease,
     background-color 200ms ease;
 }
 
-.error-message {
+.input-wrapper .error-message {
   /* Positions error message over input's bottom border on the right side */
   position: absolute;
   bottom: 0;
@@ -194,11 +194,11 @@ b,
   font-style: italic;
 }
 
-.error-message--transparent-text {
+.input-wrapper .error-message--transparent-text {
   color: transparent;
 }
 
-.error-message--visible {
+.input-wrapper .error-message--visible {
   opacity: 1;
 }
 
