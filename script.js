@@ -45,7 +45,6 @@ const removeErrorMessage = function (errorEl) {
 const handleForm = function (event) {
   event.preventDefault();
 
-  const formElement = event.target;
   const inputElements = event.target.querySelectorAll('input');
 
   let firstInvalidElement; // The first invalid element will receive focus
