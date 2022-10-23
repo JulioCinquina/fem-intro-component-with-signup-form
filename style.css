@@ -130,14 +130,18 @@ b,
 }
 
 .sign-up-card .input:focus {
-  outline: 0.0625rem solid black;
+  outline: 0.125rem solid black;
 }
 
-.sign-up-card .input:is(.input--invalid, .input--invalid:focus) {
+.sign-up-card .input.input--invalid {
   outline: 0.125rem solid var(--clr-primary-red);
   background-image: url("images/icon-error.svg");
   background-repeat: no-repeat;
   background-position: center right var(--input-padding-inline);
+}
+
+.sign-up-card .input.input--invalid:focus {
+  outline: 0.25rem solid var(--clr-primary-red);
 }
 
 .sign-up-card .input--invalid-text {
