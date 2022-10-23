@@ -6,6 +6,35 @@ const formElement = document.querySelector('#form-sign-up');
 
 // --- form validation  ---
 
+const validateInput = function (inputEl) {
+  // Checks values entered in an input element
+  // If invalid: show error message and return input element
+  // If valid: remove error message
+
+  const inputLabel = inputEl.previousElementSibling.textContent;
+  const errorEl = inputEl.nextElementSibling;
+  const inputType = inputEl.getAttribute('type');
+
+  const validityObj = inputEl.validity;
+
+  let errorMsg;
+
+  if (validityObj.valueMissing) {
+    errorMsg = `${inputLabel} cannot be empty`;
+  } else if (inputType === 'email' && validityObj.typeMismatch) {
+    errorMsg = `Looks like this is not an email`;
+  }
+
+  if (errorMsg) {
+    inputEl.setAttribute('aria-invalid', '');
+    showErrorMessage(errorEl, errorMsg);
+    return inputEl;
+  } else {
+    inputEl.removeAttribute('aria-invalid');
+    removeErrorMessage(errorEl);
+  }
+};
+
 const showErrorMessage = function (errorEl, errorMsg) {
   const errorIsEmpty = errorEl.textContent === '';
   const currentError = errorEl.textContent;
@@ -13,7 +42,7 @@ const showErrorMessage = function (errorEl, errorMsg) {
   if (!errorIsEmpty && currentError !== errorMsg) {
     // If there is already an error message and a different one must be shown,
     // prevent showing input's border by making just the text transparent
-    // (keeping white background visible) and changing it on transition end
+    // (keeping white background visible) and changing it when transition ends
     errorEl.classList.add('error-message--transparent-text');
     errorEl.addEventListener(
       'transitionend',
@@ -47,38 +76,17 @@ const handleForm = function (event) {
 
   const inputElements = event.target.querySelectorAll('input');
 
-  let firstInvalidElement; // The first invalid element will receive focus
+  let firstInvalidInput; // The first invalid input element will receive focus
 
   for (const inputEl of inputElements) {
-    const inputLabel = inputEl.previousElementSibling.textContent;
-    const errorEl = inputEl.nextElementSibling;
-    const inputType = inputEl.getAttribute('type');
+    const invalidInput = validateInput(inputEl);
 
-    const inputIsValid = inputEl.checkValidity();
-    const validityObj = inputEl.validity;
-
-    let errorMsg;
-
-    if (validityObj.valueMissing) {
-      errorMsg = `${inputLabel} cannot be empty`;
-    } else if (inputType === 'email' && validityObj.typeMismatch) {
-      errorMsg = `Looks like this is not an email`;
-    }
-
-    if (errorMsg) {
-      inputEl.setAttribute('aria-invalid', '');
-      showErrorMessage(errorEl, errorMsg);
-    } else {
-      inputEl.removeAttribute('aria-invalid');
-      removeErrorMessage(errorEl);
-    }
-
-    if (!inputIsValid && !firstInvalidElement) {
-      firstInvalidElement = inputEl;
+    if (invalidInput && !firstInvalidInput) {
+      firstInvalidInput = inputEl;
     }
   }
 
-  if (firstInvalidElement) firstInvalidElement.focus();
+  if (firstInvalidInput) firstInvalidInput.focus();
 };
 
 // --- input label positioning ---
