@@ -161,6 +161,7 @@ b,
 
 .sign-up-card .label--centered {
   /* Enlarges and centers label inside of the input */
+  background-color: transparent;
   font-size: var(--fs-350);
   color: var(--clr-neutral-dark-blue-alpha);
   transform: translate(var(--input-padding-inline), var(--input-padding-block));
