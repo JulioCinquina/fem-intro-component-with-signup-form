@@ -145,6 +145,17 @@ b,
   outline: 0.0625rem solid black;
 }
 
+.sign-up-card .input:is(.input--invalid, .input--invalid:focus) {
+  outline: 0.125rem solid var(--clr-primary-red);
+  background-image: url("images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: center right var(--input-padding-inline);
+}
+
+.sign-up-card .input--invalid-text {
+  color: var(--clr-primary-red);
+}
+
 .sign-up-card .label {
   /* Positions label over input's top border */
   position: absolute;

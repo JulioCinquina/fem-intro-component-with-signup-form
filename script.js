@@ -8,8 +8,8 @@ const formElement = document.querySelector('#form-sign-up');
 
 const validateInput = function (inputEl) {
   // Checks values entered in an input element
-  // If invalid: show error message and return input element
-  // If valid: remove error message
+  // If invalid: style it, show error message and return input element
+  // If valid: unstyle it and remove error message
 
   const inputLabel = inputEl.previousElementSibling.textContent;
   const errorEl = inputEl.nextElementSibling;
@@ -27,10 +27,12 @@ const validateInput = function (inputEl) {
 
   if (errorMsg) {
     inputEl.setAttribute('aria-invalid', '');
+    addInvalidStyle(inputEl);
     showErrorMessage(errorEl, errorMsg);
     return inputEl;
   } else {
     inputEl.removeAttribute('aria-invalid');
+    removeInvalidStyle(inputEl);
     removeErrorMessage(errorEl);
   }
 };
@@ -69,6 +71,29 @@ const removeErrorMessage = function (errorEl) {
   errorEl.addEventListener('transitionend', () => (errorEl.textContent = ''), {
     once: true,
   });
+};
+
+const addInvalidStyle = function (inputEl) {
+  inputEl.classList.add('input--invalid'); // Red outline, error icon
+  inputEl.classList.add('input--invalid-text'); // Red text
+
+  // Removes red text color once user starts typing
+  inputEl.addEventListener(
+    'input',
+    () => inputEl.classList.remove('input--invalid-text'),
+    { once: true }
+  );
+
+  // After initial validation when the form is submitted,
+  // invalid inputs will be validated when they lose focus
+  inputEl.addEventListener('blur', () => {
+    validateInput(inputEl);
+  });
+};
+
+const removeInvalidStyle = function (inputEl) {
+  inputEl.classList.remove('input--invalid');
+  inputEl.classList.remove('input--invalid-text');
 };
 
 const handleForm = function (event) {
