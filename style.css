@@ -85,8 +85,6 @@ b,
   font-weight: 600;
 }
 
-/* components */
-
 .bg-light {
   --bg-color: var(--clr-neutral-white);
   --color: var(--clr-neutral-dark-blue);
@@ -94,6 +92,8 @@ b,
   --accent-1: var(--clr-primary-green);
   --accent-2: var(--clr-primary-red);
 }
+
+/* components */
 
 .sign-up-card {
   padding: var(--spacer);
@@ -109,7 +109,7 @@ b,
   gap: 1rem;
 }
 
-.sign-up-card .input-wrapper {
+.input-wrapper {
   --input-padding-block: 1rem;
   --input-padding-inline: 1rem;
   --label-padding-inline: 0.25rem;
