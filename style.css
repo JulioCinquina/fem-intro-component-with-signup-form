@@ -124,6 +124,7 @@ b,
 .sign-up-card .input-wrapper {
   --input-padding-block: 1rem;
   --input-padding-inline: 1rem;
+  --label-padding-inline: 0.25rem;
   position: relative;
 }
 
@@ -146,9 +147,7 @@ b,
 }
 
 .sign-up-card .label {
-  --label-padding-inline: 0.25rem;
-
-  /* Positions label over input top border */
+  /* Positions label over input's top border */
   position: absolute;
   top: 0;
   left: 0rem;
@@ -172,6 +171,32 @@ b,
   /* Added by JS after a delay to prevent visible movement on page load */
   transition: transform 200ms ease, font-size 200ms ease,
     background-color 200ms ease;
+}
+
+.error-message {
+  /* Positions error message over input's bottom border on the right side */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(calc(-1rem + var(--label-padding-inline)), 50%);
+
+  padding-inline: var(--label-padding-inline);
+  background-color: var(--bg-color);
+  opacity: 0;
+  transition: opacity 200ms ease, color 200ms ease;
+
+  font-size: var(--fs-300);
+  font-weight: var(--fw-600);
+  color: var(--clr-primary-red);
+  font-style: italic;
+}
+
+.error-message--transparent-text {
+  color: transparent;
+}
+
+.error-message--visible {
+  opacity: 1;
 }
 
 .sign-up-card .button {

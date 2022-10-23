@@ -37,7 +37,7 @@
         </h2>
 
         <div class="sign-up-card bg-light">
-          <form action="#">
+          <form action="#" id="form-sign-up">
             <div class="input-wrapper">
               <label class="label" for="given-name">First Name</label>
               <input
@@ -46,8 +46,10 @@
                 name="given-name"
                 id="given-name"
                 autocomplete="given-name"
+                aria-describedby="given-name-error"
                 required
               />
+              <p id="given-name-error" class="error-message"></p>
             </div>
 
             <div class="input-wrapper">
@@ -58,8 +60,10 @@
                 name="last-name"
                 id="last-name"
                 autocomplete="family-name"
+                aria-describedby="last-name-error"
                 required
               />
+              <p id="last-name-error" class="error-message"></p>
             </div>
 
             <div class="input-wrapper">
@@ -70,8 +74,10 @@
                 name="email"
                 id="email"
                 autocomplete="email"
+                aria-describedby="email-error"
                 required
               />
+              <p id="email-error" class="error-message"></p>
             </div>
 
             <div class="input-wrapper">
@@ -82,8 +88,10 @@
                 name="password"
                 id="password"
                 autocomplete="current-password"
+                aria-describedby="password-error"
                 required
               />
+              <p id="password-error" class="error-message"></p>
             </div>
 
             <button class="button button--solid-shadow">
