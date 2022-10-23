@@ -22,10 +22,7 @@ inputElements.forEach((inputEl) => {
   inputEl.addEventListener('input', () => positionLabel(inputEl));
 });
 
-// Positions labels on page load and after page refresh
-window.addEventListener('load', () => {
-  inputElements.forEach((inputEl) => positionLabel(inputEl));
-});
+inputElements.forEach((inputEl) => positionLabel(inputEl));
 
 // Enables label transition after a delay to prevent visible shift on page load
 labelElements.forEach((labelEl) => {
