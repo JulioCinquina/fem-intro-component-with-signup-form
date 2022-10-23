@@ -116,7 +116,7 @@ b,
   position: relative;
 }
 
-.sign-up-card .input {
+.input {
   display: block;
   width: 100%;
   padding-block: var(--input-padding-block, 1rem);
@@ -129,22 +129,22 @@ b,
   font-weight: var(--fw-700);
 }
 
-.sign-up-card .input:focus {
+.input:focus {
   outline: 0.125rem solid black;
 }
 
-.sign-up-card .input.input--invalid {
+.input--invalid {
   outline: 0.125rem solid var(--clr-primary-red);
   background-image: url("images/icon-error.svg");
   background-repeat: no-repeat;
   background-position: center right var(--input-padding-inline);
 }
 
-.sign-up-card .input.input--invalid:focus {
+.input--invalid:focus {
   outline: 0.25rem solid var(--clr-primary-red);
 }
 
-.sign-up-card .input--invalid-text {
+.input--invalid-text {
   color: var(--clr-primary-red);
 }
 
@@ -350,7 +350,7 @@ main {
     gap: 1.25rem;
   }
 
-  .sign-up-card .input-wrapper {
+  .input-wrapper {
     --input-padding-inline: 2rem;
   }
 }
