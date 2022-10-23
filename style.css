@@ -202,31 +202,6 @@ b,
   opacity: 1;
 }
 
-.sign-up-card .button {
-  width: 100%;
-  border-radius: var(--border-radius-inner);
-}
-
-.sign-up-card .tos-footer {
-  max-width: 90%;
-  margin-inline: auto;
-}
-
-.tos-footer {
-  font-size: var(--fs-300);
-  color: var(--color-light);
-}
-
-.tos-footer a {
-  color: var(--accent-2, --clr-primary-red);
-  text-decoration: none;
-  font-weight: var(--fw-600);
-}
-
-.tos-footer a:is(:hover, :focus) {
-  text-decoration: underline;
-}
-
 .button,
 .button-look-alike {
   padding-block: 0.75em;
@@ -265,6 +240,21 @@ b,
   padding-inline: 2.75em;
 }
 
+.tos-footer {
+  font-size: var(--fs-300);
+  color: var(--color-light);
+}
+
+.tos-footer a {
+  color: var(--accent-2, --clr-primary-red);
+  text-decoration: none;
+  font-weight: var(--fw-600);
+}
+
+.tos-footer a:is(:hover, :focus) {
+  text-decoration: underline;
+}
+
 /* general styles  */
 
 body {
@@ -291,6 +281,8 @@ main {
   gap: 4rem;
 }
 
+/* specific styles */
+
 .page-intro {
   text-align: center;
 }
@@ -300,12 +292,20 @@ main {
   line-height: 1.2;
 }
 
-/* specific styles */
-
 .cta h2 {
   text-transform: unset;
   font-weight: 400;
   box-shadow: var(--box-shadow);
+}
+
+.sign-up-card .button {
+  width: 100%;
+  border-radius: var(--border-radius-inner);
+}
+
+.sign-up-card .tos-footer {
+  max-width: 90%;
+  margin-inline: auto;
 }
 
 /* footer */
