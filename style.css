@@ -133,7 +133,8 @@ b,
   width: 100%;
   padding-block: var(--input-padding-block, 1rem);
   padding-inline: var(--input-padding-inline, 1rem);
-  border: 0.0625rem solid var(--color-light, --clr-neutral-grayish-blue);
+  border: 0.0625rem solid transparent;
+  outline: 0.0625rem solid var(--color-light, --clr-neutral-grayish-blue);
   border-radius: var(--border-radius-inner);
 
   font-size: var(--fs-350);
@@ -141,8 +142,7 @@ b,
 }
 
 .sign-up-card .input:focus {
-  outline: none;
-  border-color: black;
+  outline: 0.0625rem solid black;
 }
 
 .sign-up-card .label {
