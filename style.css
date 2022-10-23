@@ -242,7 +242,7 @@ b,
 
 .tos-footer {
   font-size: var(--fs-300);
-  color: var(--color-light);
+  color: var(--color-light, --clr-neutral-grayish-blue);
 }
 
 .tos-footer a {
