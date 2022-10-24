@@ -21,8 +21,17 @@ const validateInput = function (inputEl) {
 
   if (validityObj.valueMissing) {
     errorMsg = `${inputLabel} cannot be empty`;
-  } else if (inputType === 'email' && validityObj.typeMismatch) {
-    errorMsg = `Looks like this is not an email`;
+  } else if (inputType === 'email') {
+    // The RegExp is a simple check for a TLD. It checks if there is at least
+    // one character after the @, followed by a dot with at least two
+    // characters after it. It is required because 'typeMismatch' is false
+    // for dotless domains.
+    const TLDRegExp = new RegExp('@.+?\\..{2,}');
+    const emailContainsTLD = TLDRegExp.test(inputEl.value);
+    const emailIsInvalid = validityObj.typeMismatch;
+
+    if (!emailContainsTLD || emailIsInvalid)
+      errorMsg = `Looks like this is not an email`;
   }
 
   if (errorMsg) {
