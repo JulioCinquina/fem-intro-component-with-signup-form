@@ -10,6 +10,8 @@ const validateInput = function (inputEl) {
   // Checks values entered in an input element
   // If invalid: style it, show error message and return input element
   // If valid: unstyle it and remove error message
+  // Returns invalid input because handleForm() needs it to give focus
+  // to the first invalid input
 
   const inputLabel = inputEl.previousElementSibling.textContent;
   const errorEl = inputEl.nextElementSibling;
@@ -52,7 +54,7 @@ const showErrorMessage = function (errorEl, errorMsg) {
 
   if (!errorIsEmpty && currentError !== errorMsg) {
     // If there is already an error message and a different one must be shown,
-    // prevent showing input's border by making just the text transparent
+    // this prevents showing input's border by making just the text transparent
     // (keeping white background visible) and changing it when transition ends
     errorEl.classList.add('error-message--transparent-text');
     errorEl.addEventListener(
@@ -75,7 +77,7 @@ const removeErrorMessage = function (errorEl) {
 
   errorEl.classList.remove('error-message--visible');
 
-  // Prevent showing input's border too soon by only removing text content
+  // Prevents showing input's border too soon by only removing text content
   // after opacity transition
   errorEl.addEventListener('transitionend', () => (errorEl.textContent = ''), {
     once: true,
