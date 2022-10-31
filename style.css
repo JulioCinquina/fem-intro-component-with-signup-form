@@ -243,6 +243,10 @@ b,
   opacity: 0.75;
 }
 
+.button:focus {
+  outline: 0.125rem solid black;
+}
+
 .button--solid-shadow {
   --solid-shadow-color: var(--accent-1, var(--clr-accent-blue));
 }
